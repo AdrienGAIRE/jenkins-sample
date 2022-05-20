@@ -17,6 +17,17 @@ node () {
 			} 
  		} 
 	}
+	stage('Quality check') {
+		withSonarQubeEnv('Sonar') {
+			if(isUnix()) {
+ 				sh "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+				-Dsonar.projectKey=Jenkins-demo"
+			} else { 
+				bat "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+				-Dsonar.projectKey=Jenkins-demo"
+			} 
+		}
+	} 
 	stage ('App-IC - Post build actions') {
 /*
 Please note this is a direct conversion of post-build actions. 
