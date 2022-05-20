@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
   
 <properties>
-  <sonar.organization>bnasslahsen</sonar.organization>
+  <sonar.organization>adriengaire</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 </properties>
   
