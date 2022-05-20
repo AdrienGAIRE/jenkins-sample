@@ -20,11 +20,9 @@ node () {
 	stage('Quality check') {
 		withSonarQubeEnv('Sonar') {
 			if(isUnix()) {
- 				sh "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-				-Dsonar.projectKey=Jenkins-demo"
+ 				sh "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Jenkins-demo"
 			} else { 
-				bat "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-				-Dsonar.projectKey=Jenkins-demo"
+				bat "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Jenkins-demo"
 			} 
 		}
 	} 
